@@ -1,4 +1,5 @@
-# nodejs-typescript-setup
+# nodejs-typescript-auth-project
+
 Setup for NodeJS Express apps built with TypeScript
 
 # Features
