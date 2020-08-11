@@ -8,7 +8,6 @@ import helmet from 'helmet';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import routes from './routes';
-import swaggerUi from 'swagger-ui-express';
 
 const app = express();
 

@@ -6,7 +6,9 @@ import jwt from 'jsonwebtoken';
 import crypto from 'crypto';
 import comparePasswords from '../utils/comparePasswords';
 import encrypt from '../utils/encrypt';
-import mailer from '../modules/mailer';
+import readHTMLFile from "src/utils/readHTMLFile";
+import path from "path";
+import sendHTMLFileToEmail from "src/utils/sendHTMLFileToEmail";
 
 export default class AuthController {
     async login(request: Request, response: Response) {
@@ -82,17 +84,27 @@ export default class AuthController {
                 }
             });
 
-            mailer.sendMail({
+            const replacements = {
+                token
+            };
+
+            const mailOptions = {
                 to: email,
                 from: 'leoodalcegio@hotmail.com',
-                html: 'forgot-password'
-            }, (err) => {
-                if (err) {
-                    return response.status(400).send({ error: 'Cannot send forgot password email' });
-                }
-                return response.send();
-            });
+                subject : 'test subject'
+            };
 
+            sendHTMLFileToEmail(
+                path.resolve(__dirname, 'src', 'resources' , 'mail', 'forgot-password.html'),
+                replacements,
+                mailOptions,
+                (error: Error) => {
+                    if (error) {
+                        return response.status(400).send({ error: 'Cannot send forgot password email' });
+                    }
+                    return response.send();
+                }
+            );
         } catch (err) {
             return response.status(400).send({ error: 'Error on forgot password, try again' + err });;
         }
