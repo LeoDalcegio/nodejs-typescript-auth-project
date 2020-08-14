@@ -10,3 +10,16 @@ Setup for NodeJS Express apps built with TypeScript
 - ESLint
 - Babel
 - Yarn
+
+# Routes
+
+
+[x] POST: /auth/register
+
+[x] POST: /auth/login
+
+[x] GET: /users
+
+[x] PUT: /users/:id
+
+[x] DELETE: /users/:id

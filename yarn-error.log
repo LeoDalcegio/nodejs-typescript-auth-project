@@ -1,5 +1,5 @@
 Arguments: 
-  /home/gitpod/.nvm/versions/node/v12.18.3/bin/node /home/gitpod/.nvm/versions/node/v12.18.3/bin/yarn add -D @types/nodemailer-express-handlebars
+  /home/gitpod/.nvm/versions/node/v12.18.3/bin/node /home/gitpod/.nvm/versions/node/v12.18.3/bin/yarn
 
 PATH: 
   /home/gitpod/.nvm/versions/node/v12.18.3/bin:/home/gitpod/.cargo/bin:/home/gitpod/.pyenv/plugins/pyenv-virtualenv/shims:/home/gitpod/.pyenv/shims:/workspace/.cargo/bin:/workspace/.pip-modules/bin:/workspace/.rvm/bin:/home/gitpod/.cargo/bin:/home/gitpod/.sdkman/candidates/maven/current/bin:/home/gitpod/.sdkman/candidates/java/current/bin:/home/gitpod/.sdkman/candidates/gradle/current/bin:/home/gitpod/.cargo/bin:/home/gitpod/.rvm/gems/ruby-2.6.6/bin:/home/gitpod/.rvm/gems/ruby-2.6.6@global/bin:/home/gitpod/.rvm/rubies/ruby-2.6.6/bin:/home/gitpod/.pyenv/plugins/pyenv-virtualenv/shims:/home/gitpod/.pyenv/shims:/workspace/.cargo/bin:/workspace/.pip-modules/bin:/workspace/.rvm/bin:/home/gitpod/.pyenv/bin:/home/gitpod/.pyenv/shims:/workspace/go/bin:/home/gitpod/go/bin:/home/gitpod/go-packages/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin/:/home/gitpod/.nvm/versions/node/v12.18.3/bin:/home/gitpod/.rvm/bin:/home/gitpod/.rvm/bin:/home/gitpod/.rvm/bin
@@ -14,29 +14,24 @@ Platform:
   linux x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@types%2fnodemailer-express-handlebars: Not found
-      at Request.params.callback [as _callback] (/home/gitpod/.nvm/versions/node/v12.18.3/lib/node_modules/yarn/lib/cli.js:66987:18)
-      at Request.self.callback (/home/gitpod/.nvm/versions/node/v12.18.3/lib/node_modules/yarn/lib/cli.js:140748:22)
-      at Request.emit (events.js:315:20)
-      at Request.<anonymous> (/home/gitpod/.nvm/versions/node/v12.18.3/lib/node_modules/yarn/lib/cli.js:141720:10)
-      at Request.emit (events.js:315:20)
-      at IncomingMessage.<anonymous> (/home/gitpod/.nvm/versions/node/v12.18.3/lib/node_modules/yarn/lib/cli.js:141642:12)
-      at Object.onceWrapper (events.js:421:28)
-      at IncomingMessage.emit (events.js:327:22)
-      at endReadableNT (_stream_readable.js:1220:12)
-      at processTicksAndRejections (internal/process/task_queues.js:84:21)
+  SyntaxError: /workspace/nodejs-typescript-auth-project/package.json: Unexpected token } in JSON at position 773
+      at JSON.parse (<anonymous>)
+      at /home/gitpod/.nvm/versions/node/v12.18.3/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/home/gitpod/.nvm/versions/node/v12.18.3/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /home/gitpod/.nvm/versions/node/v12.18.3/lib/node_modules/yarn/lib/cli.js:321:13
 
 npm manifest: 
   {
-      "name": "node-setup",
+      "name": "nodejs-typescript-auth-project",
       "version": "1.0.0",
-      "main": "index.js",
+      "main": "server.js",
       "author": "LeoDalcegio <leoodalcegio@hotmail.com>",
       "license": "MIT",
       "scripts": {
           "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
           "start": "node dist/server.js",
-          "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpileOnly --ignore-watch node_modules --no-notify src/server.ts",
+          "dev": "ts-node-dev -r tsconfig-paths/register --respawn --ignore-watch node_modules  src/server.ts",
           "test": "jest"
       },
       "dependencies": {
@@ -49,8 +44,6 @@ npm manifest:
           "jsonwebtoken": "^8.5.1",
           "mongoose": "^5.9.28",
           "mongoose-paginate": "^5.0.3",
-          "nodemailer": "^6.4.11",
-          "nodemailer-express-handlebars": "^4.0.0"
       },
       "devDependencies": {
           "@babel/cli": "^7.10.5",
@@ -59,7 +52,7 @@ npm manifest:
           "@babel/preset-env": "^7.11.0",
           "@babel/preset-typescript": "^7.10.4",
           "@types/bcryptjs": "^2.4.2",
-          "@types/express": "^4.17.6",
+          "@types/express": "^4.17.7",
           "@types/jest": "^26.0.9",
           "@types/jsonwebtoken": "^8.5.0",
           "@typescript-eslint/eslint-plugin": "^3.3.0",
@@ -1293,7 +1286,7 @@ Lockfile:
       "@types/qs" "*"
       "@types/range-parser" "*"
   
-  "@types/express@^4.17.6":
+  "@types/express@^4.17.7":
     version "4.17.7"
     resolved "https://registry.yarnpkg.com/@types/express/-/express-4.17.7.tgz#42045be6475636d9801369cd4418ef65cdb0dd59"
     integrity sha512-dCOT5lcmV/uC2J9k0rPafATeeyz+99xTt54ReX11/LObZgfzJqZNcW27zGhYyX+9iSEGXGt5qLPwRSvBZcLvtQ==
@@ -1364,6 +1357,13 @@ Lockfile:
     version "14.0.27"
     resolved "https://registry.yarnpkg.com/@types/node/-/node-14.0.27.tgz#a151873af5a5e851b51b3b065c9e63390a9e0eb1"
     integrity sha512-kVrqXhbclHNHGu9ztnAwSncIgJv/FaxmzXJvGXNdcCpV1b8u1/Mi6z6m0vwy0LzKeXFTPLH0NzwmoJ3fNCIq0g==
+  
+  "@types/nodemailer@^6.4.0":
+    version "6.4.0"
+    resolved "https://registry.yarnpkg.com/@types/nodemailer/-/nodemailer-6.4.0.tgz#d8c039be3ed685c4719a026455555be82c124b74"
+    integrity sha512-KY7bFWB0MahRZvVW4CuW83qcCDny59pJJ0MQ5ifvfcjNwPlIT0vW4uARO4u1gtkYnWdhSvURegecY/tzcukJcA==
+    dependencies:
+      "@types/node" "*"
   
   "@types/normalize-package-data@^2.4.0":
     version "2.4.0"

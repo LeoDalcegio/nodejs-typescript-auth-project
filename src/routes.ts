@@ -23,7 +23,5 @@ routes.delete('/users/:id',
 
 routes.post('/auth/register', authController.register);
 routes.post('/auth/login', authController.login);
-routes.post('/auth/forgot-password', authController.forgotPassword);
-routes.post('/auth/reset-password', authController.resetPassword);
 
 export default routes;

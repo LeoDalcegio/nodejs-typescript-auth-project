@@ -22,14 +22,6 @@ const UserSchema = mongoose.Schema({
         max: 1024,
         min: 6,
         select: false
-    },
-    passwordResetToken: {
-        type: String,
-        select: false,
-    },
-    passwordResetExpires: {
-        type: Date,
-        select: false
     }
 },{
     timestamps: true
